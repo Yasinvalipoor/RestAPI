@@ -6,8 +6,8 @@ namespace RestAPI.Model.Models;
 
 public partial class SampleRestApiContext : DbContext
 {
-    DbSet<Product> Products { get; set; }
-    DbSet<Brand> Brands { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Brand> Brands { get; set; }
 
 
     public SampleRestApiContext()

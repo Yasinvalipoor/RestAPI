@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34227.203
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI.Model", "RestAPI.Model\RestAPI.Model.csproj", "{3FCBF51A-3948-41EE-BE39-1DACADDD6894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestAPI.Model", "RestAPI.Model\RestAPI.Model.csproj", "{3FCBF51A-3948-41EE-BE39-1DACADDD6894}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI.ConsoleApp", "RestAPI.ConsoleApp\RestAPI.ConsoleApp.csproj", "{8671A0BA-C9EE-4E49-BEB7-81A0E55A4861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestAPI.ConsoleApp", "RestAPI.ConsoleApp\RestAPI.ConsoleApp.csproj", "{8671A0BA-C9EE-4E49-BEB7-81A0E55A4861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI.SimpleAPI.FirstPart", "RestAPI.SimpleAPI.FirstPart\RestAPI.SimpleAPI.FirstPart.csproj", "{4D7153D3-319A-4B33-A97A-6ACF8AC873DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8671A0BA-C9EE-4E49-BEB7-81A0E55A4861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8671A0BA-C9EE-4E49-BEB7-81A0E55A4861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8671A0BA-C9EE-4E49-BEB7-81A0E55A4861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7153D3-319A-4B33-A97A-6ACF8AC873DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7153D3-319A-4B33-A97A-6ACF8AC873DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7153D3-319A-4B33-A97A-6ACF8AC873DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7153D3-319A-4B33-A97A-6ACF8AC873DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
