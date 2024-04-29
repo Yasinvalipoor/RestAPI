@@ -1,0 +1,6 @@
+@RestAPI.MinimalAPI.SecondPart_HostAddress = http://localhost:5105
+
+GET {{RestAPI.MinimalAPI.SecondPart_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

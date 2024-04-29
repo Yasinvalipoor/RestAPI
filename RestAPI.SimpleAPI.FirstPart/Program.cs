@@ -8,16 +8,20 @@ builder.Services.AddDbContext<SampleRestApiContext>();
 
 var app = builder.Build();
 
-app.MapGet("/GetProductList", async (HttpContext ctx,SampleRestApiContext dbcontext) =>
+//Here , We Make a Simple API 
+
+#region Simple API
+app.MapGet("/GetProductList", async (HttpContext ctx, SampleRestApiContext dbcontext) =>
 {
-    var productList = dbcontext.Products.ToList();
-    var productliststring = JsonConvert.SerializeObject(productList);
+var productList = dbcontext.Products.ToList();
+var productliststring = JsonConvert.SerializeObject(productList);
 
-    ctx.Response.StatusCode = 200;
-    ctx.Response.ContentType = "application/json";  
-    await ctx.Response.WriteAsync(productliststring);
+ctx.Response.StatusCode = 200;
+ctx.Response.ContentType = "application/json";
+await ctx.Response.WriteAsync(productliststring);
 
-});
+}); 
+#endregion
 
 app.MapGet("/", () => "Hello World!");
 
