@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RestAPI.Model.Models;
 
 namespace RestAPI.WebAPI.MVC.ThirdPart
@@ -36,9 +37,31 @@ namespace RestAPI.WebAPI.MVC.ThirdPart
 
         //public ProductController(SampleRestApiContext dbcontext) => this.dbcontext = dbcontext;
 
-
         #region Dependency Injection
-        public IActionResult GetAllProducts([FromServices]SampleRestApiContext dbcontext) => Ok(dbcontext.Products.ToList());
+        public IActionResult GetAllProducts([FromServices] SampleRestApiContext dbcontext) => Ok(dbcontext.Products.ToList());
+
+        //Prevent circular reference
+        [HttpGet("/api/Product/ProductWithBrand")]
+        public IActionResult GetProducts([FromServices] SampleRestApiContext dbcontext)
+        {
+             var product = dbcontext.Products.Include(c => c.brand).ToList();
+            foreach (var item in product)
+            {
+                item.brand.Products = null;
+            }
+            return Ok(product);
+        }
+
+        [HttpGet("/api/GetProduct/{id}")]
+        public IActionResult GetProduct([FromServices] SampleRestApiContext dbcontext, int id)
+        {
+            var product = dbcontext.Products.Where(c => c.Id == id).FirstOrDefault();
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
+        }
         #endregion
 
     }
