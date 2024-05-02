@@ -1,4 +1,9 @@
+using Microsoft.Extensions.DependencyInjection;
+using RestAPI.Model.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<SampleRestApiContext>();
 
 builder.Services.AddControllers();
 
@@ -8,3 +13,4 @@ app.MapControllers();
 
 
 app.Run();
+ 

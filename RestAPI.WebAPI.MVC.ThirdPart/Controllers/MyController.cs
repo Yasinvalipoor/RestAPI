@@ -7,7 +7,9 @@ namespace RestAPI.WebAPI.MVC.ThirdPart.Controllers
     //[ApiController]
 
     public class MyController : ControllerBase
+    
     {
+        [HttpGet("GetName")]
         public string GetName()
         {
             return "Hello Every Body";
